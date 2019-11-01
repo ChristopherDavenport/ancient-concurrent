@@ -86,7 +86,7 @@ inThisBuild(List(
   ),
 
   homepage := Some(url("https://github.com/ChristopherDavenport/ancient-concurrent")),
-  licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
+  licenses += ("Apache-2.0", url("http://www.apache.org/licenses/")),
 
   pomIncludeRepository := { _ => false},
   scalacOptions in (Compile, doc) ++= Seq(
