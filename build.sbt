@@ -1,6 +1,9 @@
 import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 val catsEffectV = "0.10.1"
+
+val disciplineScalatestVersion = "1.0.0-RC1"
+
 val kindProjectorV = "0.11.0"
 val betterMonadicForV = "0.3.1"
 
@@ -74,7 +77,12 @@ lazy val commonSettings = Seq(
   addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % betterMonadicForV),
 
   libraryDependencies ++= Seq(
-    "org.typelevel"               %% "cats-effect"                % catsEffectV
+    "org.typelevel"               %% "cats-effect"                % catsEffectV,
+    "org.typelevel"               %% "discipline-scalatest"       % disciplineScalatestVersion % Test
+  ),
+  scalacOptions --= Seq(
+    "-Ywarn-value-discard",
+    "-Xfatal-warnings"
   )
 )
 
