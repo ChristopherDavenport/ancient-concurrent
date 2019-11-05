@@ -94,7 +94,7 @@ object Deferred {
    * Creates an unset promise that only requires an `Async` and
    * does not support cancellation of `get`.
    *
-   * WARN: some `Async` data types, like [[IO]], can be cancelable,
+   * WARN: some `Async` data types, like `IO`, can be cancelable,
    * making `uncancelable` values unsafe. Such values are only useful
    * for optimization purposes, in cases where the use case does not
    * require cancellation or in cases in which an `F[_]` data type
