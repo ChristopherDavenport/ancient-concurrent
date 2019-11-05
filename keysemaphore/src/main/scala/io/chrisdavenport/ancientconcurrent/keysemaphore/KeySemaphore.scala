@@ -18,7 +18,7 @@ object KeySemaphore {
   // }
 
   /**
-   * Like [[of]] but only requires an `Async` constraint in exchange for the various
+   * Like `of` but only requires an `Async` constraint in exchange for the various
    * acquire effects being uncancelable.
    *
    * WARN: some `Async` data types, like `IO`, can be cancelable,
@@ -40,7 +40,7 @@ object KeySemaphore {
 
   /**
    * Creates a new `Semaphore`, initialized with `n` available permits.
-   * Like [[in]] but only requires an `Async` constraint in exchange for the various
+   * Like `in` but only requires an `Async` constraint in exchange for the various
    * acquire effects being uncancelable
    * and initializes state using another effect constructor
    */
