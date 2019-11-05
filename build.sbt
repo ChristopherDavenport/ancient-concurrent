@@ -11,12 +11,19 @@ val betterMonadicForV = "0.3.1"
 lazy val `ancient-concurrent` = project.in(file("."))
   .disablePlugins(MimaPlugin)
   .enablePlugins(NoPublishPlugin)
-  .aggregate(core)
+  .aggregate(core, keysemaphore)
 
 lazy val core = project.in(file("core"))
   .settings(commonSettings)
   .settings(
     name := "ancient-concurrent"
+  )
+
+lazy val keysemaphore = project.in(file("keysemaphore"))
+  .settings(commonSettings)
+  .dependsOn(core)
+  .settings(
+    name := "ancient-concurrent-keysemaphore"
   )
 
 lazy val site = project.in(file("site"))
