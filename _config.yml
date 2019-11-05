@@ -1,0 +1,11 @@
+name: ancient-concurrent
+baseurl: /ancient-concurrent
+description: Cats-Effect Concurrency For Ancient Times
+highlighter: rouge
+docs: true
+collections:
+  tut:
+    output: true
+version: 0.0.0+6-e6e5b241-SNAPSHOT
+org: io.chrisdavenport
+markdown: kramdown
