@@ -126,7 +126,7 @@ abstract class Ref[F[_], A] {
 object Ref {
 
   /**
-   * Builds a `Ref` value for data types that are [[Sync]]
+   * Builds a `Ref` value for data types that are `Sync`
    *
    * This builder uses the
    * [[https://typelevel.org/cats/guidelines.html#partially-applied-type-params Partially-Applied Type]]
@@ -157,7 +157,7 @@ object Ref {
   def of[F[_], A](a: A)(implicit F: Sync[F]): F[Ref[F, A]] = F.delay(unsafe(a))
 
   /**
-   *  Builds a `Ref` value for data types that are [[Sync]]
+   *  Builds a `Ref` value for data types that are `Sync`
    *  Like [[of]] but initializes state using another effect constructor
    */
   def in[F[_], G[_], A](a: A)(implicit F: Sync[F], G: Sync[G]): F[Ref[G, A]] = F.delay(unsafe(a))

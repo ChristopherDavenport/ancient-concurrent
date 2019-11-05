@@ -91,7 +91,7 @@ abstract class TryableDeferred[F[_], A] extends Deferred[F, A] {
 
 object Deferred {
   /**
-   * Creates an unset promise that only requires an [[Async]] and
+   * Creates an unset promise that only requires an `Async` and
    * does not support cancellation of `get`.
    *
    * WARN: some `Async` data types, like [[IO]], can be cancelable,
@@ -108,7 +108,7 @@ object Deferred {
     F.delay(unsafeUncancelable[G, A])
 
   /**
-   * Creates an unset tryable promise that only requires an [[Async]] and
+   * Creates an unset tryable promise that only requires an `Async` and
    * does not support cancellation of `get`.
    */
   def tryableUncancelable[F[_], A](implicit F: Async[F]): F[TryableDeferred[F, A]] =
